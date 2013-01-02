@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="frebModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="frebModelStoreContainer">
+          <EntitySet Name="FrebLog" EntityType="frebModel.Store.FrebLog" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="FrebLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="URL" Type="nvarchar(max)" />
+          <Property Name="Filename" Type="nvarchar" MaxLength="150" />
+          <Property Name="Provider" Type="nvarchar" MaxLength="150" />
+          <Property Name="EventID" Type="nvarchar" MaxLength="150" />
+          <Property Name="Version" Type="nvarchar" MaxLength="150" />
+          <Property Name="FLevel" Type="nvarchar" MaxLength="150" />
+          <Property Name="OPcode" Type="nvarchar" MaxLength="150" />
+          <Property Name="Keywords" Type="nvarchar" MaxLength="150" />
+          <Property Name="TimeCreated" Type="nvarchar" MaxLength="150" />
+          <Property Name="DateCreated" Type="nvarchar" MaxLength="150" />
+          <Property Name="Computer" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContextID" Type="nvarchar" MaxLength="150" />
+          <Property Name="LineNumber" Type="nvarchar" MaxLength="150" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="ErrorCode" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="frebModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="frebEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FrebLogDBs" EntityType="frebModel.FrebLogDB" />
+        </EntityContainer>
+        <EntityType Name="FrebLogDB">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URL" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Filename" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Provider" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="EventID" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="FLevel" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="OPcode" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Keywords" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="TimeCreated" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="DateCreated" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Computer" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ContextID" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="LineNumber" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ErrorCode" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="frebModelStoreContainer" CdmEntityContainer="frebEntities">
+          <EntitySetMapping Name="FrebLogDBs"><EntityTypeMapping TypeName="frebModel.FrebLogDB"><MappingFragment StoreEntitySet="FrebLog">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="URL" ColumnName="URL" />
+            <ScalarProperty Name="Filename" ColumnName="Filename" />
+            <ScalarProperty Name="Provider" ColumnName="Provider" />
+            <ScalarProperty Name="EventID" ColumnName="EventID" />
+            <ScalarProperty Name="Version" ColumnName="Version" />
+            <ScalarProperty Name="FLevel" ColumnName="FLevel" />
+            <ScalarProperty Name="OPcode" ColumnName="OPcode" />
+            <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+            <ScalarProperty Name="TimeCreated" ColumnName="TimeCreated" />
+            <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+            <ScalarProperty Name="Computer" ColumnName="Computer" />
+            <ScalarProperty Name="ContextID" ColumnName="ContextID" />
+            <ScalarProperty Name="LineNumber" ColumnName="LineNumber" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ErrorCode" ColumnName="ErrorCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Freb">
+        <EntityTypeShape EntityType="frebModel.FrebLogDB" Width="1.5" PointX="0.75" PointY="0.75" Height="4.0956022135416656" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
