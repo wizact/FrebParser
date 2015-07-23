@@ -5,6 +5,7 @@ A handy console application to parse all the FREB logs in a directory and persis
 
 **This application is provided as-is. There are some tweaks in there for the purpose of getting information required and removing trivial errors.**
 
+
 Usage:
   1) Configure the connection string in config file
   2) Use Visual Studio 2010 to build the project
